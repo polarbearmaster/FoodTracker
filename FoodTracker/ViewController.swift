@@ -13,8 +13,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     // MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
-    
     @IBOutlet weak var photoImageVIew: UIImageView!
+    @IBOutlet weak var ratingControl: RatingControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
@@ -28,10 +29,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     func textFieldDidEndEditing(textField: UITextField) {
         mealNameLabel.text = textField.text
     }
+    
     // MARK: Actions
-    @IBAction func setDefaultLabeltext(sender: UIButton) {
-        mealNameLabel.text = "Default Text"
-    }
 
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
         nameTextField.resignFirstResponder()
